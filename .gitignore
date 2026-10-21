@@ -1,0 +1,17 @@
+# Imagem original da Ana (1,5 MB); a página usa assets/img/ana-avatar.png
+assets/img/Ana.png
+
+# Roteiro do vídeo (material de trabalho, não faz parte do site)
+roteiro-video-collab2us.md
+video-script-collab2us-en.md
+
+# Documentação em PDF (material de trabalho; publicar só se pedido)
+Collab2Us_Study_Documentation_EN.pdf
+Collab2Us_Study_Documentation_EN.md
+
+# Anexo com resultados do piloto (dados de participantes; publicar só se pedido)
+anexo-piloto/
+
+# Arquivos do sistema e backup local do histórico antigo
+.DS_Store
+backup-historico-*.bundle

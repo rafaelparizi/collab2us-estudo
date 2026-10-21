@@ -1,0 +1,10 @@
+# Pré-visualização local da página (igual ao GitHub Pages: arquivos estáticos).
+# Uso: docker compose up -d  →  http://localhost:8080
+# As alterações nos arquivos aparecem ao recarregar o navegador.
+services:
+  site:
+    image: nginx:1.27-alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/usr/share/nginx/html:ro

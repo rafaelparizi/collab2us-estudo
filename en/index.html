@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Collab2Us Study</title>
+  <meta name="description" content="Overview of the Collab2Us evaluation study, a tool that supports the move from visual ideation in Miro to an agile backlog in Trello, with human curation.">
+  <link rel="alternate" hreflang="pt-BR" href="../index.html">
+  <link rel="alternate" hreflang="en" href="index.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=20261019b">
+</head>
+<body class="home">
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#">Collab2Us</a>
+    <a href="#problema">Problem</a>
+    <a href="#exemplo">Ana</a>
+    <a href="#proposta">Proposal</a>
+    <a href="#participar">Take part</a>
+    <a href="tcle.html">Consent</a>
+    <span class="lang-switch" aria-label="Language"><a href="../index.html" hreflang="pt-BR" lang="pt-BR">PT</a><a href="index.html" aria-current="true">EN</a></span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="label">Evaluation study · IFFar São Borja</p>
+    <h1>Collab2Us: from visual ideation to an agile backlog, with human curation</h1>
+    <p class="lede">
+      We are evaluating a tool that turns the notes from a Miro workshop into user stories in
+      Trello, with quality assessment, optional AI support and traceability back to the original
+      idea. This page explains the study and how you can take part.
+    </p>
+    <p class="meta">
+      <strong>Researchers:</strong> Pedro Lucas Dornelles and Rafael Parizi ·
+      Federal Institute Farroupilha (IFFar), São Borja campus<br>
+      Letícia Machado · Institute of Informatics, Federal University of Rio Grande do Sul (INF/UFRGS)
+    </p>
+  </div>
+</header>
+
+<main>
+
+<section id="problema">
+  <div class="wrap">
+    <h2>The Problem in Software Development</h2>
+    <p class="scenario">
+      In requirements workshops, stakeholders capture ideas on visual boards such as Miro, and the
+      Product Owner has to turn them into well-scoped user stories in a backlog, such as Trello. Done
+      by hand, this hand-off loses context; done only with generative AI, it requires checking whether
+      the suggestions match what stakeholders expected. Collab2Us supports this transition: the tool
+      proposes, the Product Owner decides.
+    </p>
+  </div>
+</section>
+
+<section id="exemplo">
+  <div class="wrap">
+    <h2>Consider a day in the life of Ana, a Product Owner</h2>
+
+    <div class="example-grid">
+      <figure class="example-fig">
+        <img src="../assets/img/quadro-ana.png" width="595" height="645"
+             alt="Miro board “Order Delivery Requirements” with three rows of notes: actor Customer, action and benefit, linked by arrows. 01 Order tracking, 02 Estimated delivery date and 03 Candidate for refinement.">
+        <figcaption>The workshop's Miro board: actor, action and benefit linked by connectors.</figcaption>
+      </figure>
+
+      <div>
+        <div class="persona">
+          <img src="../assets/img/ana-avatar.png" width="64" height="64" alt="Illustration of Ana">
+          <div>
+            <p class="persona-name">Ana</p>
+            <p class="persona-role">Product Owner at an online store</p>
+          </div>
+        </div>
+        <p>
+          After a workshop with her team, Ana's Miro board holds three candidate stories, built from
+          the notes and their connections:
+        </p>
+        <div class="stories">
+          <div class="story"><span class="pill">US01</span><span><strong>Order tracking.</strong> As a customer, I want to track the real-time shipping status of my order, so that I know which delivery stage my package is at.</span></div>
+          <div class="story"><span class="pill">US02</span><span><strong>Estimated delivery date.</strong> As a customer, I want fast and easy delivery notifications, to get a better and friendly experience.</span></div>
+          <div class="story flag"><span class="pill">US03</span><span><strong>Candidate for refinement.</strong> As a customer, I want to track my delivery location, and I want to cancel my order with fast and easy refund and I want… so that I have full control over my purchase.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="duo">
+      <div class="callout">
+        <p class="label">Why human curation matters</p>
+        <p>
+          US03 combines two different needs (tracking the location and cancelling with a refund),
+          ends with an unfinished fragment (“and I want…”) and has a vague benefit. The QUS and INVEST
+          indicators help flag problems of form, but deciding how to split the story and what each
+          part means to the customer is up to the Product Owner.
+        </p>
+      </div>
+      <div>
+      <p>With AI support, Ana can split US03 into two stories:</p>
+      <blockquote>
+        As a customer, I want to track my delivery location, so that I know where my order is.
+      </blockquote>
+      <blockquote>
+        As a customer, I want to cancel my order and receive a quick refund, so that I stay in control
+        of my purchase.
+      </blockquote>
+      <p>And an acceptance criterion for the first one:</p>
+      <blockquote>
+        Given an order in transit, when the customer opens the order details, then the system shows
+        the latest delivery location and the time of the update.
+      </blockquote>
+      </div>
+    </div>
+
+    <p>
+      Ana re-assesses, decides and exports the stories to the <em>User Stories</em> column in Trello.
+      The export report records the cards created, and the source links let anyone go back from each
+      card to the workshop notes.
+    </p>
+  </div>
+</section>
+
+<section id="proposta">
+  <div class="wrap">
+    <h2>Proposal: Collab2Us</h2>
+    <p class="scenario">
+      Collab2Us is a web application that takes ideas from the collaborative board to the backlog in
+      four steps. The tool proposes and organizes; the Product Owner follows every step, validates and
+      decides.
+    </p>
+    <ol class="stages">
+      <li><span class="step-num">0</span><div><b>Integration setup.</b> The user connects their Miro and Trello accounts and authorizes access to the boards.</div></li>
+      <li><span class="step-num">1</span><div><b>Extraction and structuring.</b> Chooses the source board, the target board and the column; the tool reads the notes and connections and builds candidate stories.</div></li>
+      <li><span class="step-num">2</span><div><b>Quality and curation.</b> QUS and INVEST support the review; the Product Owner edits, re-assesses and selects. Optional AI suggests rewordings, splits and BDD criteria.</div></li>
+      <li><span class="step-num">3</span><div><b>Export and traceability.</b> The stories become Trello cards, linked to their source notes, with on-demand checks for divergences.</div></li>
+    </ol>
+    <figure class="proposal-fig">
+      <img src="../assets/img/proposta.webp" width="1983" height="793" loading="lazy"
+           alt="Infographic in Portuguese, “Collab2Us: from the collaborative board to the backlog”. The Product Owner follows every step, validates and decides. Step 0, integration setup: connects Miro and Trello and authorizes access to the boards. Step 1, extraction and structuring: selects source, target and column and turns notes and relations into candidate stories. Step 2, quality and curation: QUS and INVEST support the review, the Product Owner edits and selects, with optional AI that rewords, splits stories and suggests BDD criteria. Step 3, export and traceability: creates Trello cards, keeps references and checks divergences on demand. The tool supports; the Product Owner leads the decisions.">
+      <figcaption>Infographic in Portuguese; the steps are described above.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="tela">
+  <div class="wrap wide">
+    <h2>Explore the home screen</h2>
+    <figure class="tour" id="tour">
+      <p class="tour-hint">Hover over or tap the numbers to learn about each part of the home screen.</p>
+      <div class="tour-layout">
+      <div class="tour-scroll">
+        <div class="tour-stage">
+          <img src="../assets/img/home.png" width="1629" height="690"
+               alt="Collab2Us home screen: top menu, status cards for the Miro and Trello integrations, user session, and shortcuts to start a sync and open the metrics dashboard.">
+          <svg class="tour-arrows" viewBox="0 0 1629 690" aria-hidden="true">
+            <defs>
+              <marker id="tour-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+              </marker>
+            </defs>
+          </svg>
+          <div class="tour-tip" role="tooltip" id="tour-tip" hidden></div>
+        </div>
+      </div>
+        <div class="tour-side">
+          <p class="tour-group">Menu and top bar</p>
+          <ol class="tour-legend" id="tour-legend-side"></ol>
+        </div>
+      </div>
+      <p class="tour-group">Home dashboard</p>
+      <ol class="tour-legend below" id="tour-legend-below"></ol>
+      <figcaption>Collab2Us home screen.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="participar">
+  <div class="wrap">
+    <h2>How you can take part</h2>
+    <p>
+      If you have been invited to the study, start with the Informed Consent Form. The session
+      instructions become available once you accept.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="tcle.html">Take part in the study →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Contact:</strong> Rafael Parizi · <a href="mailto:rafael.parizi@iffar.edu.br">rafael.parizi@iffar.edu.br</a></p>
+    <p>Federal Institute Farroupilha (IFFar), São Borja campus, RS, Brazil.</p>
+    <p>References: QUS (Lucassen et al., 2016) · INVEST (Wake, 2003) · SUS (Brooke, 1996) · TAM3 (Venkatesh and Bala, 2008).</p>
+  </div>
+</footer>
+
+<script src="../assets/js/tour.js?v=20261019b"></script>
+</body>
+</html>

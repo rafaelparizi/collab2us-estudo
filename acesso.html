@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acesso · Collab2Us</title>
+  <meta name="description" content="Tarefas e dados de acesso da sessão de avaliação do Collab2Us.">
+  <link rel="alternate" hreflang="pt-BR" href="acesso.html">
+  <link rel="alternate" hreflang="en" href="en/acesso.html">
+  <meta name="robots" content="noindex">
+  <script src="assets/js/consent.js?v=20261019b"></script>
+  <script>
+    if (!Collab2UsConsent.hasConsent()) location.replace("tcle.html");
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=20261019b">
+</head>
+<body class="center-page">
+
+<main class="access-card">
+  <span class="lang-switch" aria-label="Idioma"><a href="acesso.html" aria-current="true">PT</a><a href="en/acesso.html" hreflang="en" lang="en">EN</a></span>
+  <p class="label">Sessão de avaliação</p>
+  <h1>Collab2Us</h1>
+  <p class="sub">Use os dados abaixo para entrar na ferramenta e siga as tarefas na ordem.</p>
+
+  <div class="ready">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div>
+      <p class="ready-title">A ferramenta já está configurada</p>
+      <p>As integrações com o Miro e o Trello já foram feitas pelo pesquisador. Não é preciso alterar nenhuma configuração: concentre-se em extrair, revisar e exportar as histórias.</p>
+    </div>
+  </div>
+
+  <h2>Dados de acesso</h2>
+  <dl class="creds" id="creds"></dl>
+
+  <div class="tip-card">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M12 10.5v6" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="7.2" r="1.5" fill="#fff"/></svg>
+    <div>
+      <p class="tip-title">Consulte esta página durante o uso</p>
+      <p>O Collab2Us abre em outra aba. Volte aqui sempre que precisar rever as tarefas ou os dados de acesso; esta página continua disponível durante toda a sessão.</p>
+    </div>
+  </div>
+
+  <h2>Tarefas</h2>
+  <ol class="mini-tasks">
+    <li><b>Extrair ideias do Miro.</b> Selecione o quadro Miro de origem, o quadro Trello de destino e a coluna do Kanban, e acione a extração.</li>
+    <li><b>Examinar a avaliação de qualidade.</b> No editor de histórias, observe o escore QUS e os indicadores INVEST de cada história.</li>
+    <li><b>Revisar uma história com apoio de IA.</b> Peça uma sugestão, revise, ajuste o texto se necessário e repita a avaliação.</li>
+    <li><b>Exportar a história para o Trello.</b> Envie-a para a coluna escolhida e confira o relatório de exportação.</li>
+    <li><b>Consultar a origem.</b> Use o vínculo de origem para voltar à nota do Miro que deu origem à história.</li>
+  </ol>
+  <p class="tip">Em caso de dúvida ou erro, peça ajuda ao pesquisador. Não insira dados pessoais reais na ferramenta.</p>
+
+  <div class="actions">
+    <a class="btn primary" id="open-tool" href="https://collab2us.onrender.com" target="_blank" rel="noopener">Abrir o Collab2Us ↗</a>
+    <a class="btn secondary" href="questionario.html">Terminei as tarefas →</a>
+  </div>
+  <p class="hint">A ferramenta pode levar alguns segundos para carregar no primeiro acesso.</p>
+  <p class="back"><a href="instrucoes.html">← Voltar às instruções</a></p>
+</main>
+
+<script>
+  // Dados de acesso do estudo. Preencha antes da sessão.
+  const ACESSO = [
+    { rotulo: "Endereço", valor: "https://collab2us.onrender.com", link: true },
+    { rotulo: "Usuário", valor: "" },
+    { rotulo: "Senha", valor: "" },
+    { rotulo: "Quadro Miro", valor: "" },
+    { rotulo: "Quadro Trello", valor: "" }
+  ];
+
+  (function () {
+    const dl = document.getElementById("creds");
+    ACESSO.forEach(item => {
+      const dt = document.createElement("dt");
+      dt.textContent = item.rotulo;
+      const dd = document.createElement("dd");
+      if (!item.valor) {
+        dd.innerHTML = '<span class="tbd">informado pelo pesquisador</span>';
+      } else {
+        const v = document.createElement(item.link ? "a" : "code");
+        v.textContent = item.valor;
+        if (item.link) { v.href = item.valor; v.target = "_blank"; v.rel = "noopener"; }
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "copy";
+        b.textContent = "Copiar";
+        b.setAttribute("aria-label", "Copiar " + item.rotulo.toLowerCase());
+        b.addEventListener("click", async () => {
+          try { await navigator.clipboard.writeText(item.valor); b.textContent = "Copiado"; }
+          catch (e) { b.textContent = "Selecione e copie"; }
+          setTimeout(() => b.textContent = "Copiar", 1500);
+        });
+        dd.append(v, b);
+      }
+      dl.append(dt, dd);
+    });
+  })();
+</script>
+</body>
+</html>

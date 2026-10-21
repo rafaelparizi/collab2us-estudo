@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Access · Collab2Us</title>
+  <meta name="description" content="Tasks and access details for the Collab2Us evaluation session.">
+  <meta name="robots" content="noindex">
+  <link rel="alternate" hreflang="pt-BR" href="../acesso.html">
+  <link rel="alternate" hreflang="en" href="acesso.html">
+  <script src="../assets/js/consent.js?v=20261019b"></script>
+  <script>
+    if (!Collab2UsConsent.hasConsent()) location.replace("tcle.html");
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=20261019b">
+</head>
+<body class="center-page">
+
+<main class="access-card">
+  <span class="lang-switch" aria-label="Language"><a href="../acesso.html" hreflang="pt-BR" lang="pt-BR">PT</a><a href="acesso.html" aria-current="true">EN</a></span>
+  <p class="label">Evaluation session</p>
+  <h1>Collab2Us</h1>
+  <p class="sub">Use the details below to sign in to the tool and follow the tasks in order.</p>
+
+  <div class="ready">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div>
+      <p class="ready-title">The tool is already set up</p>
+      <p>The researcher has already set up the Miro and Trello integrations. You don't need to change any settings: focus on extracting, reviewing and exporting the stories.</p>
+    </div>
+  </div>
+
+  <h2>Access details</h2>
+  <dl class="creds" id="creds"></dl>
+
+  <div class="tip-card">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M12 10.5v6" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="7.2" r="1.5" fill="#fff"/></svg>
+    <div>
+      <p class="tip-title">Keep this page handy while you work</p>
+      <p>Collab2Us opens in another tab. Come back here whenever you need to review the tasks or the access details; this page stays available for the whole session.</p>
+    </div>
+  </div>
+
+  <h2>Tasks</h2>
+  <ol class="mini-tasks">
+    <li><b>Extract ideas from Miro.</b> Select the source Miro board, the target Trello board and the Kanban column, and start the extraction.</li>
+    <li><b>Examine the quality assessment.</b> In the story editor, look at the QUS score and INVEST indicators for each story.</li>
+    <li><b>Revise a story with AI support.</b> Ask for a suggestion, review it, adjust the text if needed and run the assessment again.</li>
+    <li><b>Export the story to Trello.</b> Send it to the chosen column and check the export report.</li>
+    <li><b>Check the source.</b> Use the source link to go back to the Miro note the story came from.</li>
+  </ol>
+  <p class="tip">If you have a question or something goes wrong, ask the researcher for help. Do not enter real personal data into the tool.</p>
+
+  <div class="actions">
+    <a class="btn primary" id="open-tool" href="https://collab2us.onrender.com" target="_blank" rel="noopener">Open Collab2Us ↗</a>
+    <a class="btn secondary" href="questionario.html">I've finished the tasks →</a>
+  </div>
+  <p class="hint">The tool may take a few seconds to load the first time.</p>
+  <p class="back"><a href="instrucoes.html">← Back to the instructions</a></p>
+</main>
+
+<script>
+  // Study access details. Fill in before the session.
+  const ACESSO = [
+    { rotulo: "Address", valor: "https://collab2us.onrender.com", link: true },
+    { rotulo: "Username", valor: "" },
+    { rotulo: "Password", valor: "" },
+    { rotulo: "Miro board", valor: "" },
+    { rotulo: "Trello board", valor: "" }
+  ];
+
+  (function () {
+    const dl = document.getElementById("creds");
+    ACESSO.forEach(item => {
+      const dt = document.createElement("dt");
+      dt.textContent = item.rotulo;
+      const dd = document.createElement("dd");
+      if (!item.valor) {
+        dd.innerHTML = '<span class="tbd">provided by the researcher</span>';
+      } else {
+        const v = document.createElement(item.link ? "a" : "code");
+        v.textContent = item.valor;
+        if (item.link) { v.href = item.valor; v.target = "_blank"; v.rel = "noopener"; }
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "copy";
+        b.textContent = "Copy";
+        b.setAttribute("aria-label", "Copy " + item.rotulo.toLowerCase());
+        b.addEventListener("click", async () => {
+          try { await navigator.clipboard.writeText(item.valor); b.textContent = "Copied"; }
+          catch (e) { b.textContent = "Select and copy"; }
+          setTimeout(() => b.textContent = "Copy", 1500);
+        });
+        dd.append(v, b);
+      }
+      dl.append(dt, dd);
+    });
+  })();
+</script>
+</body>
+</html>

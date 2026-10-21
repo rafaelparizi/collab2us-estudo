@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Questionnaire · Collab2Us</title>
+  <meta name="description" content="Acceptance (TAM3) and usability (SUS) questionnaire for the Collab2Us pilot study.">
+  <link rel="alternate" hreflang="pt-BR" href="../questionario.html">
+  <link rel="alternate" hreflang="en" href="questionario.html">
+  <script src="../assets/js/consent.js?v=20261019b"></script>
+  <script>
+    if (!Collab2UsConsent.hasConsent()) location.replace("tcle.html");
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css?v=20261019b">
+</head>
+<body>
+
+<nav class="nav" aria-label="Navigation">
+  <div class="wrap">
+    <a class="brand" href="index.html">Collab2Us</a>
+    <a href="index.html">The study</a>
+    <a href="instrucoes.html">Instructions</a>
+    <a href="questionario.html" aria-current="page">Questionnaire</a>
+    <span class="lang-switch" aria-label="Language"><a href="../questionario.html" hreflang="pt-BR" lang="pt-BR">PT</a><a href="questionario.html" aria-current="true">EN</a></span>
+  </div>
+</nav>
+
+<div class="q-progress" aria-hidden="true">
+  <div class="wrap">
+    <span id="prog-text">0 of 24 answered</span>
+    <span class="bar"><i id="prog-bar"></i></span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="label">Questionnaire</p>
+    <h1>Your view of Collab2Us</h1>
+    <p class="lede">There are three parts: 14 statements about acceptance of the tool, 10 about usability and three open questions. There are no right or wrong answers. Respond based on your experience with the tasks you carried out.</p>
+    <div class="q-meta">
+      <div>
+        <label for="codigo">Participant code</label>
+        <input type="text" id="codigo" placeholder="Provided by the researcher (e.g., P01)" autocomplete="off">
+      </div>
+      <div>
+        <label for="data">Date</label>
+        <input type="date" id="data">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<form id="q-form" novalidate>
+
+  <section class="q-part" id="parte-tam">
+    <div class="wrap">
+      <p class="label">Part 1 of 3 · Acceptance</p>
+      <h2>Acceptance of the tool</h2>
+      <p class="intro">Considering your experience with Collab2Us during the tasks you carried out, indicate how much you agree with each statement. In this questionnaire, “requirements tasks” refers to turning ideas from the visual board into user stories that are reviewed and organized in the backlog.</p>
+      <p class="intro">Choose one answer per statement, from 1 (strongly disagree) to 7 (strongly agree).</p>
+      <div class="q-legend" id="legend-tam"></div>
+      <div id="items-tam"></div>
+    </div>
+  </section>
+
+  <section class="q-part" id="parte-sus">
+    <div class="wrap">
+      <p class="label">Part 2 of 3 · Usability</p>
+      <h2>Usability of the tool</h2>
+      <p class="intro">After using Collab2Us, indicate how much you agree with each statement. Choose only one answer per row, from 1 (strongly disagree) to 5 (strongly agree).</p>
+      <div class="q-legend" id="legend-sus"></div>
+      <div id="items-sus"></div>
+    </div>
+  </section>
+
+  <section class="q-part" id="parte-abertas">
+    <div class="wrap">
+      <p class="label">Part 3 of 3 · Open questions</p>
+      <h2>Your experience, in your own words</h2>
+      <p class="intro">Considering the tasks you carried out with Collab2Us, answer the three questions below. Describe your experience in your own words. Whenever possible, give a concrete example. There are no right or wrong answers; critical comments also help improve the tool and the study.</p>
+      <div class="q-open" id="open-Q1">
+        <label for="Q1"><span class="num">1.</span> Which part of Collab2Us helped you most in moving the ideas into the backlog?</label>
+        <textarea id="Q1" name="Q1" rows="5"></textarea>
+      </div>
+      <div class="q-open" id="open-Q2">
+        <label for="Q2"><span class="num">2.</span> Which part did you find most difficult, or where were you unsure what to do?</label>
+        <textarea id="Q2" name="Q2" rows="5"></textarea>
+      </div>
+      <div class="q-open" id="open-Q3">
+        <label for="Q3"><span class="num">3.</span> What needs to change before we use the tool with students?</label>
+        <textarea id="Q3" name="Q3" rows="5"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <section class="q-part" id="enviar">
+    <div class="wrap">
+      <div class="callout" id="missing-box" hidden role="alert">
+        <p class="label">Missing answers</p>
+        <p id="missing-title"></p>
+      </div>
+      <div class="actions">
+        <button type="submit" class="btn primary" id="finish">Finish questionnaire</button>
+      </div>
+
+      <div class="success" id="done" hidden role="status">
+        <svg class="success-icon" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" fill="currentColor"/>
+          <path d="M14 24.5l7 7 13-14" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h2>Questionnaire complete!</h2>
+        <p class="success-lead">Thank you for taking part. Your answers have been recorded.</p>
+        <p class="send-status" id="send-status" hidden aria-live="polite"></p>
+        <p>Let the researcher know you have finished.</p>
+        <div class="actions">
+          <button type="button" class="btn primary" id="retry" hidden>Try sending again</button>
+          <button type="button" class="btn secondary" id="edit">Review answers</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</form>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Questions: Rafael Parizi · <a href="mailto:rafael.parizi@iffar.edu.br">rafael.parizi@iffar.edu.br</a></p>
+    <p>Items adapted from Venkatesh and Bala (2008), TAM3, and from Brooke (1996), SUS. Open questions written for the Collab2Us pilot.</p>
+  </div>
+</footer>
+
+<dialog class="modal" id="open-dialog" aria-labelledby="open-dialog-title" aria-describedby="open-dialog-msg">
+  <svg class="modal-icon" viewBox="0 0 48 48" aria-hidden="true">
+    <circle cx="24" cy="24" r="22" fill="currentColor"/>
+    <path d="M24 13v14" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="24" cy="34.5" r="2.8" fill="#fff"/>
+  </svg>
+  <h2 id="open-dialog-title">Unanswered open questions</h2>
+  <p class="modal-count" id="open-dialog-count"></p>
+  <p id="open-dialog-msg">Your open answers are very important for improving the tool and the study. Are you sure you want to finish without answering?</p>
+  <div class="modal-actions">
+    <button type="button" class="btn primary" id="open-dialog-back">Go back and answer</button>
+    <button type="button" class="btn secondary" id="open-dialog-skip">Finish without answering</button>
+  </div>
+</dialog>
+
+<script src="../assets/js/questionario.js?v=20261019b"></script>
+</body>
+</html>

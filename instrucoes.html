@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instruções · Collab2Us</title>
+  <meta name="description" content="Instruções da sessão do estudo piloto do Collab2Us, disponíveis após o aceite do TCLE.">
+  <link rel="alternate" hreflang="pt-BR" href="instrucoes.html">
+  <link rel="alternate" hreflang="en" href="en/instrucoes.html">
+  <script src="assets/js/consent.js?v=20261019b"></script>
+  <script>
+    if (!Collab2UsConsent.hasConsent()) location.replace("tcle.html");
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=20261019b">
+</head>
+<body>
+
+<nav class="nav" aria-label="Navegação">
+  <div class="wrap">
+    <a class="brand" href="index.html">Collab2Us</a>
+    <a href="index.html">O estudo</a>
+    <a href="tcle.html">Consentimento</a>
+    <a href="instrucoes.html" aria-current="page">Instruções</a>
+    <span class="lang-switch" aria-label="Idioma"><a href="instrucoes.html" aria-current="true">PT</a><a href="en/instrucoes.html" hreflang="en" lang="en">EN</a></span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="label">Etapa 2 de 2 · Instruções</p>
+    <h1>Como será a sessão</h1>
+    <p class="lede">Obrigado por aceitar participar. A sessão é individual, dura cerca de 30 a 35 minutos e usa apenas dados fictícios e contas de teste.</p>
+    <p class="meta" id="consent-meta"></p>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <h2>Antes de começar</h2>
+    <ul>
+      <li>O estudo avalia a ferramenta, não você.</li>
+      <li>Use as contas de teste e os quadros fornecidos pelo pesquisador. Não insira informações pessoais ou profissionais reais no Miro, no Trello ou no serviço de IA.</li>
+      <li>Você pode pedir ajuda, fazer uma pausa ou encerrar a sessão a qualquer momento.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Roteiro</h2>
+    <h3>1. Apresentação breve</h3>
+    <p>O Collab2Us leva as ideias de um quadro Miro até o backlog no Trello em quatro etapas:</p>
+    <ul class="stage-lines">
+      <li><strong>Etapa 0 · Configuração das integrações:</strong> já foi feita pelo pesquisador; as contas do Miro e do Trello estão conectadas.</li>
+      <li><strong>Etapa 1 · Extração:</strong> extrair as notas e relações do quadro e montar histórias candidatas.</li>
+      <li><strong>Etapa 2 · Qualidade e curadoria:</strong> avaliar a qualidade com QUS e INVEST, revisar e, se quiser, pedir sugestões à IA.</li>
+      <li><strong>Etapa 3 · Exportação:</strong> exportar as histórias selecionadas para o Trello, mantendo o vínculo com as notas de origem.</li>
+    </ul>
+    <p>O estudo se concentra nas etapas 1 a 3. Em todas elas, quem decide é você, no papel de Product Owner.</p>
+    <figure class="proposal-fig">
+      <img src="assets/img/fluxo-estudo.webp" width="1983" height="793" loading="lazy"
+           alt="Infográfico “Collab2Us: do quadro colaborativo ao backlog”. A Product Owner acompanha todas as etapas, valida e decide. Etapa 0, configuração das integrações: Miro e Trello já configurados, preparação concluída. Foco do estudo, etapas 1 a 3. Etapa 1, extração e estruturação: notas, relações e proximidade espacial geram histórias candidatas. Etapa 2, qualidade e curadoria: QUS e INVEST apoiam a revisão, o PO edita, reavalia e seleciona; IA opcional reformula, divide histórias e sugere critérios BDD, e o revisor define o conteúdo final. Etapa 3, exportação e rastreabilidade: histórias selecionadas viram cartões no Trello, com referências ao Miro e verificações sob demanda. Integrações prontas; o estudo concentra-se nas etapas 1 a 3, até a exportação.">
+    </figure>
+
+    <h3>2. Cinco atividades que você, como Product Owner, precisa fazer</h3>
+    <ol class="task-list">
+      <li><strong>Extrair ideias do Miro</strong> e transformá-las em histórias candidatas.
+        <span class="task-desc">Selecione o quadro Miro de origem, o quadro Trello de destino e a coluna do Kanban, e acione a extração. A ferramenta lê as notas adesivas e os conectores do quadro e organiza as ideias em histórias candidatas para revisão.</span></li>
+      <li><strong>Examinar a avaliação de qualidade</strong> das histórias (escore QUS e indicadores INVEST).
+        <span class="task-desc">Abra o editor de histórias e observe o escore QUS e os indicadores INVEST de cada uma. Eles apoiam a revisão, mas não substituem a leitura do que a história realmente pede.</span></li>
+      <li><strong>Revisar uma história com apoio de IA</strong> e decidir o texto final.
+        <span class="task-desc">Peça à IA uma sugestão de reformulação, divisão da história ou critérios de aceitação no formato BDD. Revise a sugestão, ajuste o texto se necessário e repita a avaliação.</span></li>
+      <li><strong>Exportar a história para o Trello.</strong>
+        <span class="task-desc">Mantenha a história selecionada para exportação e envie-a para a coluna escolhida no Trello. O relatório de exportação confirma a criação do cartão.</span></li>
+      <li><strong>Consultar a origem</strong> da história exportada no quadro Miro.
+        <span class="task-desc">A partir da história exportada, use o vínculo de origem para voltar à nota do workshop no Miro que deu origem a ela.</span></li>
+    </ol>
+
+    <h3>3. Questionários</h3>
+    <p>Você responderá a <strong>14 afirmações</strong> sobre aceitação da ferramenta, adaptadas do TAM3, e a <strong>10 afirmações</strong> da escala SUS sobre usabilidade. Pode deixar de responder qualquer questão.</p>
+
+    <h3>4. Três perguntas abertas</h3>
+    <p>Sobre as contribuições da ferramenta, as dificuldades encontradas e as melhorias que você sugere. <span id="audio-note"></span></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Iniciar avaliação</h2>
+    <div class="actions">
+      <a class="btn primary" href="acesso.html">Abrir o Collab2Us →</a>
+      <a class="btn secondary" href="index.html#tour">Rever a tela inicial anotada</a>
+    </div>
+    <p class="hint">A ferramenta é hospedada em um serviço gratuito e pode levar alguns segundos para carregar no primeiro acesso.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Questionário</h2>
+    <p>Responda ao questionário depois de concluir as atividades com a ferramenta.</p>
+    <div class="actions">
+      <a class="btn primary" href="questionario.html">Responder ao questionário →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Dúvidas: Rafael Parizi · <a href="mailto:rafael.parizi@iffar.edu.br">rafael.parizi@iffar.edu.br</a></p>
+    <p>Quer revisar ou retirar seu consentimento? <a href="tcle.html">Volte ao termo</a> ou fale com o pesquisador.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const rec = Collab2UsConsent.get();
+    if (!rec) return;
+    document.getElementById("consent-meta").textContent =
+      "Consentimento registrado neste navegador em " + new Date(rec.date).toLocaleString("pt-BR") + ".";
+    document.getElementById("audio-note").textContent = rec.audio === "autorizo"
+      ? "Você autorizou a gravação em áudio dessas respostas; o pesquisador confirmará antes de começar a gravar."
+      : "Você não autorizou a gravação em áudio; o pesquisador registrará suas respostas por escrito.";
+  })();
+</script>
+</body>
+</html>
